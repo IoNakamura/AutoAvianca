@@ -1,0 +1,72 @@
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.9.9")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+ext {
+    serenityVersion = '2.0.41'
+    serenityCucumberVersion = '1.9.31'
+}
+
+dependencies {
+
+    testImplementation("net.serenity-bdd:serenity-core:1.1.1")
+    testImplementation("net.serenity-bdd:serenity-junit:1.1.1")
+    testImplementation("junit:junit:4.12")
+    testImplementation("org.assertj:assertj-core:1.7.0")
+    testImplementation("org.slf4j:slf4j-simple:1.7.7")
+
+    implementation( "net.serenity-bdd:serenity-core:1.9.9")
+    implementation( "net.serenity-bdd:serenity-junit:1.9.9")
+    implementation( "net.serenity-bdd:serenity-cucumber:1.9.5")
+    implementation( "net.serenity-bdd:serenity-screenplay:1.9.9")
+    implementation( "net.serenity-bdd:serenity-screenplay-webdriver:1.9.9")
+
+    implementation 'org.apache.commons:commons-lang3:3.8.1'
+    implementation 'org.apache.logging.log4j:log4j-core:2.11.2'
+    implementation 'org.apache.logging.log4j:log4j-api:2.11.2'
+    implementation 'org.apache.commons:commons-collections4:4.4'
+    implementation 'org.apache.commons:commons-configuration2:2.5'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
+    implementation group: 'org.apache.poi', name: 'poi', version: '3.17'
+
+    /*
+    implementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-gradle-plugin:$rootProject.ext.serenityVersion"
+    implementation 'net.serenity-bdd:serenity-screenplay-rest:2.0.15'
+    implementation 'org.apache.commons:commons-lang3:3.8.1'
+    implementation 'org.apache.logging.log4j:log4j-core:2.11.2'
+    implementation 'org.apache.logging.log4j:log4j-api:2.11.2'
+    implementation 'org.slf4j:slf4j-simple:1.7.26'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.8'
+    implementation 'org.apache.commons:commons-collections4:4.4'
+    implementation 'commons-beanutils:commons-beanutils:1.9.4'
+    implementation 'org.apache.commons:commons-configuration2:2.5'
+    implementation group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
+//    implementation group: 'co.com.bancolombia.certificacion', name: 'myextra', version: '1.1.0'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
+    implementation group: 'org.apache.poi', name: 'poi', version: '3.17'
+    implementation 'net.sf.jacob-project:jacob:1.14.3'
+    */
+}
+
+gradle.startParameter.continueOnFailure = true

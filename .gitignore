@@ -1,0 +1,18 @@
+# Ignore Gradle project-specific cache directory
+
+
+# Ignore Gradle build output directory
+/.gradle/
+/build/
+/target/
+/.idea/
+
+# Compiled class file
+*.class
+# Log file
+*.log
+
+#Comprimidos
+*.rar
+*.zip
+*.7z
